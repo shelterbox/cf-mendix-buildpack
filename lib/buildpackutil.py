@@ -61,6 +61,10 @@ def get_hostname():
     return dd_hostname
 
 
+def get_appname():
+    return get_vcap_data()["application_name"]
+
+
 def get_blobstore_url(filename):
     main_url = os.environ.get("BLOBSTORE", "https://cdn.mendix.com")
     if main_url[-1] == "/":
